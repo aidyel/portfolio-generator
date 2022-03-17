@@ -1,5 +1,5 @@
 
-const generatePage = ( iname, github) => {
+module.exports = ( iname, github) => {
     return  `
     <!DOCTYPE html> 
     <html lang="en"> 
@@ -17,5 +17,3 @@ const generatePage = ( iname, github) => {
     </html>
     `;
 };
-
-module.exports = generatePage;

@@ -11,17 +11,21 @@
 
 // printProfileData(profileDataArgs);
 const fs = require('fs');
+const { compileFunction } = require('vm');
 
 const generatePage = require('./src/page-template.js');
 
-const profileDataArgs = process.argv.slice(2, process.argv.length);
+const profileDataArgs = process.argv.slice(2);
+console.log(profileDataArgs);
 
 const[iname, github] = profileDataArgs;
+console.log(iname, github);
+
+const pageHTML = generatePage(iname, github);
 
 
-
-fs.writeFile('index.html', generatePage(iname, github), err => {
+fs.writeFile('index.html', pageHTML, err => {
     if (err) throw err;
     
-    console.log('Portfolio complete! Checkout index.html to see the output!')
-})
+    console.log('Portfolio complete! Checkout index.html to see the output!');
+});
