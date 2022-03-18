@@ -1,4 +1,3 @@
-const { template } = require("lodash");
 
 const generateAbout = aboutText => {
     if (!aboutText) {
